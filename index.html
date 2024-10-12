@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder By Warda Kamran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> <b>Dynamic Resume Builder</b> </h1>
+        <form id="resumeForm">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" pattern="\d*" maxlength="10" required>
+
+            <label for="education">Education:</label>
+            <select id="education" name="education">
+                <option value="High School">High School</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+            </select>
+
+            <label for="experience">Experience:</label>
+            <input type="text" id="experience" name="experience" required>
+
+            <label for="skills">Skills:</label>
+            <select id="skills" name="skills" multiple>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="TypeScript">TypeScript</option>
+            </select>
+
+            <label for="profilePic">Profile Picture:</label>
+            <input type="file" id="profilePic" accept="image/*">
+
+            <button type="button" id="generateResume">Generate Resume</button>
+        </form>
+
+        <div id="resumeOutput" class="resume-output"></div>
+
+        <button id="downloadResume" style="display:none;">Download Resume</button>
+    </div>
+
+    <!--  CDN for html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
